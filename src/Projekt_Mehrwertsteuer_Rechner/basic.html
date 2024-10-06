@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Projekt_Mehrwertssteuer_Rechner</title>
+</head>
+<body>
+    <h1>Mehrwertssteuer-Rechner</h1>
+    <form id="mwstRechner">
+        <fieldset>
+            <legend>Was soll berechnet werden?</legend>
+            <div>
+                <input type="radio" id="nettoBrutto" name="wieViel" required>
+                <label for="nettoBrutto">Mehrwersteuer aufschlagen (Netto zu Brutto)</label>
+            </div>
+            <!-- required to make sure it´s opted -->
+            <div>
+                <input type="radio" id="bruttoNetto" name="wieViel">
+                <label for="bruttoNetto">Mehrwertsteuer abziehen (Brutto zu Netto)</label>
+            </div>
+            <legend>Mehrwertsteuersatz</legend>
+            <div>
+                <input type="radio" id="mwstNeunzehn" name="steuerSatz" checked>
+                <label for="mehr">19%</label>
+            </div>
+            <div>
+                <input type="radio" id="mwstSieben" name="steuerSatz">
+                <label for="weniger">7%</label>
+            </div>
+            <div>
+                <label id="inputLabel" for="inputNettoBrutto">Nettobetrag (Preis ohne Mehrwertsteuer) in Euro</label>
+                <div>
+                    <input type="number" name="inputNettoBrutto" id="inputNettoBrutto" min="0">  
+                    <!--min to prevent negative value  -->
+                </div>
+            </div>
+                <button type="button" id="btnBerechnen">Berechnen</button>
+            
+            <section>
+                <p>Ergebnis</p>
+                <div>
+                    <p>Mehrwertsteuerbetrag</p>
+                    <p id="mwstBetrag">€</p>
+                </div>
+                <div>
+                    <p>Bruttobetrag</p>
+                    <p id="outputLabel"></p>
+                </div>
+            </section>
+        </fieldset>
+    </form>
+    <script type="module" src="./basic.ts"></script>
+</body>
+</html>
